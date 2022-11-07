@@ -11,8 +11,10 @@
     "astro": "astro"
   },
   "dependencies": {
+    "@astrojs/cloudflare": "^3.1.2",
     "@astrojs/tailwind": "^2.1.2",
     "astro": "^1.6.0",
+    "qrcode": "^1.5.1",
     "tailwindcss": "^3.2.2"
   }
 }
