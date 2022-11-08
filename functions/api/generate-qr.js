@@ -1,6 +1,17 @@
 
 import qr from "qrcode";
 
+export async function onRequestOptions() {
+  return new Response(null, {
+    headers: {
+      'Access-Control-Allow-Origin': '*',
+      'Access-Control-Allow-Methods': 'GET,HEAD,POST,OPTIONS',
+      'Access-Control-Allow-Headers': '*',
+      'Access-Control-Max-Age': '86400',
+    }
+  })
+}
+
 export async function onRequestPost(context) {
   // Contents of context object
   // const {
@@ -26,6 +37,10 @@ export async function onRequestPost(context) {
   return new Response(JSON.stringify({ svg: qrImage }), {
     headers: {
       'Content-Type': 'application/json',
+      'Access-Control-Allow-Origin': '*',
+      'Access-Control-Allow-Methods': 'GET,HEAD,POST,OPTIONS',
+      'Access-Control-Max-Age': '86400',
+      'Access-Control-Allow-Headers': '*',
     }
   }); // Web API
 }
